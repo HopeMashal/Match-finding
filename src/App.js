@@ -13,22 +13,16 @@ class App extends React.Component {
   }
 
   setLike = () => {
-    this.setState((prevState) => {
-      return { countLike: prevState.countLike + 1 };
-    });
+    return this.setState({countLike: this.state.countLike+1 });
   };
 
   setDislike = () => {
-    this.setState((prevState) => {
-      return { countDislike: prevState.countDislike + 1 };
-    });
+    return this.setState({countDislike: this.state.countDislike+1 });
   };
 
   setNext = () => {
     if (this.state.currentItem + 1 <= this.state.numOfItems) {
-      this.setState((prevState) => {
-        return { currentItem: prevState.currentItem + 1 };
-      });
+      return this.setState({ currentItem: this.state.currentItem+1 });
     } else {
       this.setState({ isEnd: true });
     }

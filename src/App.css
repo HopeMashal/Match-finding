@@ -29,3 +29,12 @@ p{
   float: right;
   font-size: 4vh;
 }
+.Equal{
+  color: purple;
+}
+.Happy{
+  color:green;
+}
+.Sad{
+  color:red;
+}

@@ -18,15 +18,16 @@ const ApprovalCard = ({nextItem,likeFun,dislikeFun,isEnd,dislikeNum,likeNum,curr
   };
   if(isEnd){
     const mycontainer=document.querySelector('.image-description');
-    if(likeNum===dislikeNum) mycontainer.innerHTML=`<p><b>The number of likes equals the number of dislikes<br/>You should be more cheerful!!<b/><p/>`;
-    if(likeNum>dislikeNum) mycontainer.innerHTML=`<p><b>The number of likes is more than the number of dislikes<br/>Great, you are really cheerful :)<b/><p/>`;
-    if(likeNum<dislikeNum) mycontainer.innerHTML=`<p><b>The number of likes is less than the number of dislikes<br/>Your condition is hopeless!!<b/><p/>`;
+    if(likeNum===dislikeNum) mycontainer.innerHTML=`<p>The number of likes equals the number of dislikes.<br/><b class='Equal'>You should be more cheerful!!<b/><p/>`;
+    if(likeNum>dislikeNum) mycontainer.innerHTML=`<p>The number of likes is more than the number of dislikes.<br/><b class='Happy'>Great, you are really cheerful :)<b/><p/>`;
+    if(likeNum<dislikeNum) mycontainer.innerHTML=`<p>The number of likes is less than the number of dislikes.<br/><b class='Sad'>Your condition is hopeless!!<b/><p/>`;
+    mycontainer.style.fontSize='20px';
   }
   return(
     <div className="ui card">
       <div className='extra content'>
-        <div className='nav-green'><img src={Like} alt="like"/> {likeNum}</div>
-        <div className='nav-red'>{dislikeNum} <img src={Dislike} alt="dislike"/></div>
+        <div className='nav-green'><img src={Like} alt="like"/> <b>{likeNum}</b></div>
+        <div className='nav-red'><b>{dislikeNum}</b> <img src={Dislike} alt="dislike"/></div>
       </div>
       <div className="content image-description">
           <p>{Data[currentItem].description}</p><hr/>
