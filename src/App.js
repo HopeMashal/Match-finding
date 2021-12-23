@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import ApprovalCard from './components/ApprovalCard';
+import {Data} from './components/imageData';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends React.Component {
+  state={countLike:0,countDislike:0}
+  render() {
+    return (
+      <div className="App">
+        <ApprovalCard 
+          likeNum={this.state.countLike}
+          dislikeNum={this.state.countDislike}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <p>{Data[0].description}</p><hr/>
+          <div className="img-container">
+            <img className="animal-img" alt="myimage" src={Data[0].url}></img>
+          </div>
+        </ApprovalCard>
+      </div>
+    );
+  }
 }
 
 export default App;
